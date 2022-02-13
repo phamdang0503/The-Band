@@ -1,0 +1,88 @@
+@media (max-width: 63.9375em) {
+    .sm-plr-8 {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    .button-black {
+        padding: 15px 16px;
+    }
+    .form-control {
+        padding: 15px;
+    }
+    .contact-info {
+        line-height: 1.9;
+    }
+    #footer .social-section {
+        font-size: 34.5px;
+    }
+    .copyright {
+        font-size: 18px;
+    }
+    .copyright p a {
+        display: inline-block;
+        padding: 16px 0;
+    }
+}
+
+@media (min-width: 46.25em) and (max-width: 63.9375em) {
+    .search-bt .ti-search{
+        padding: 0 25px 0 25px;
+    }
+    #nav .subnav a {
+        padding: 6px 8px;
+    }
+}
+
+@media (max-width: 46.1875em) {
+    .s-full,
+    .s-col-full{
+        width: 100% !important;
+    }
+    .s-mt-2 {
+        margin-top: 2px;
+    }
+    .s-mt-32 {
+        margin-top: 32px;
+    }
+    #header {
+        overflow: hidden;
+    }
+    #nav > li {
+        display: block;
+    }
+    #nav li a {
+        padding: 1px 16px;
+    }
+    #nav .subnav {
+        position: initial;
+        background-color: rgba(59, 59, 59, 0.8);
+    }
+    #nav .subnav a {
+        padding: 5px 36px;
+        color: #fff;
+    }
+    #nav > li:first-child {
+        display: inline-block;
+    }
+    .search-bt {
+        display: none;
+    }
+    .mobile-menu-btn {
+        display: block;
+    }
+    #slider ul {
+        bottom: 16px;
+    }
+    #slider ul li h4 {
+        font-size: 16px;
+    }
+    #slider ul li p {
+        font-size: 11px;
+    }
+    .member-list .member-item {
+        width: 100%;
+    }
+    .member-list .member-item .member-img {
+        width: 60%;
+    }
+}

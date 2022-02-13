@@ -1,0 +1,454 @@
+/* Reset CSS */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+} 
+html{
+    font-family:  -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, sans-serif;
+    /* sử dụng scroll-behavior: smooth để tạo hiệu ứng chuyển động khi ấn vào nav */
+    scroll-behavior: smooth;
+}
+/* 1. từ ngoài vào trong
+2. từ trên xuống dưới
+3. tổng quan đến chi tiết */
+/* 1. vị trí
+2. kích thuóc
+3. màu sắc
+4. kiểu dáng */
+
+/* -------common------- */
+
+/* sử dụng để giải quyết vấn đề không bao trọn toàn bộ thẻ khi dùng float */
+.clear{
+    clear: both;
+}
+/* chỉ sử dụng !important cho thẻ ngoài để tạo sự ưu tiên */
+.text-while{
+    color: #fff !important;
+}
+.text-gray {
+    color: rgb(70, 70, 70);
+}
+.text-decoration {
+    text-decoration: none;
+}
+.align-center{
+    text-align: center;
+}
+.row{
+    margin: 0 -8px;
+}
+/* sử dụng Selection giả để không lặp lại thẻ <div class="clear"> */
+.row::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.col{
+    padding: 0 8px;
+    float: left;
+}
+.col-full{
+    width: 100%;
+}
+.col-haft{
+    width: 50%;
+}
+.col-third{
+    width: 33.33333%;
+}
+.input-border {
+    border: 1px solid #ccc;
+}
+.button-black {
+    background-color: #000;
+    color: #fff;
+    padding: 8px 16px;
+    margin-bottom: 16px;
+    border: 0;
+    font-size: 15px;
+    text-align: center;
+}
+.button-black:hover {
+    color: #000;
+    background-color: #ccc;
+}
+.plr-16 {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.ptb-32 {
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+.ptb-64 {
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+.mt-8 {
+    margin-top: 8px;
+}
+.mtb-16 {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+.mb-16 {
+    margin-bottom: 16px;
+}
+/*------- main -------*/
+
+/* HEADER */
+#header{
+    width: 100vw;
+    height: 46px;
+    background-color: rgb(0, 0, 0);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+#nav, .subnav {
+    /* tắt dấu chấm của thẻ ul  */
+    list-style-type: none;
+}
+
+/* tạo chiều ngang cho thẻ li */
+#nav > li{
+    display: inline-block;
+}
+#nav li{
+    position: relative;
+}
+#nav > li > a{
+    color: white;
+    /* chuyển kiểu chữ thường thành hoa */
+    text-transform: uppercase ;
+    /* độ dày của chữ */
+    font-weight: 500 ;
+}
+#nav li a {   
+    /* căn giữa chiều dọc */
+    line-height: 46px;
+    padding: 0px 16px;
+    /* tạo giá trị chiều ngang */
+    display: block;
+}
+#nav >li:hover > .subnav{
+    display: block;
+}
+#nav > li:hover > a,
+.mobile-menu-btn .menu-icon:hover,
+#nav  .subnav  li:hover  a{
+    color: #000;
+    background-color: #ccc;
+}
+#nav .subnav {
+    display: none;
+    min-width: 160px;
+    position:absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;  
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+#nav .subnav a{
+    color: black;
+    padding: 0 8px;
+    line-height: 36px;
+}
+#nav .ti-angle-down{
+    font-size: 14px;
+}
+.mobile-menu-btn {
+    display: none;
+}
+.mobile-menu-btn .menu-icon,
+.search-bt .ti-search{
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    line-height: 46px;
+}
+.search-bt .ti-search {
+    padding: 0 40px 0 25px;
+}
+.search-bt .search-icon:hover{
+    /* thay đổi con trỏ chuột  */
+    cursor: pointer;
+    background-color: rgb(255, 17, 0);
+    color: rgb(255, 255, 255);
+}
+#slider{
+    width: 100vw;
+    height: 56.25vw;
+    margin-top: 46px;
+    background-image: url(../img/slider.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+#slider img{
+    width: 100vw;
+    height: 56.25vw;
+    position: absolute;
+}
+#slider ul{
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    /* sử dụng transform : translate(_,_,_) để chỉnh vị trí của phần tử tiến thêm hay lùi lại theo giá trị của phần tử đó */
+    transform: translateX(-50%);  
+}
+#slider ul li{
+    list-style: none;
+    color: whitesmoke;
+    text-align: center;
+    text-shadow: 0 0 1px rgb(49, 49, 49);
+}
+#slider ul li h4 {
+    font-size: 32px;
+}
+/* CONTENT */
+    /* About */
+.content-section{
+    width: 800px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.section-heading{
+    font-size: 30px;
+    font-weight: 400;
+    margin: 10px 0;
+    letter-spacing: 4px;
+}
+.section-heading,
+.section-sub-heading{
+    text-align: center;
+}
+.section-sub-heading{
+    font-size: 15px;
+    font-style: italic;
+    opacity: 0.6;
+    margin: 15px 0;
+}
+.about-section{
+    font-size: 15px;
+    text-align: justify;
+    line-height: 1.4;
+}
+.member-list{
+    padding: 32px 0;
+    /* sử dụng để giải quyết vấn đề không bao trọn toàn bộ thẻ khi dùng float */
+    /* overflow: auto; */
+}
+.menber-name{ 
+    margin: 15px 0;
+    font-size: 15px;
+}
+.member-img{
+    width: 154px;
+    border-radius : 4px;
+}
+    /* Tour */
+.tour-section{
+    background-color: #000;
+}
+.book-ticket{
+    margin-top: 40px;
+    background-color: #fff;
+}
+.book-ticket li{
+    font-size: 15px;
+    padding: 8px 16px;
+    border-bottom: 1px solid #ddd;
+}
+.book-ticket .product-status{
+    background-color: #f44336;
+    color: #fff;
+    padding: 2px 4px;
+    margin-left: 16px;
+}
+.quantity{
+    background-color: black;
+    color: white;
+    padding: 0 8px;
+    float: right;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 23px;
+    margin-top: -2px;
+}
+/* Multi Tour Item */
+.multi-tour-item{
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.tour-item img{
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+}
+.tour-item img:hover{
+    opacity: 0.6;
+}
+.information{
+    background-color: white;
+}
+.information h4{
+    padding: 15px 0;
+    font-weight: 600;
+    font-size: 15px;
+}
+.information p{
+    margin: 15px 0;
+    font-size: 15px;
+}
+.date{
+    opacity: 0.6;
+}
+/* Contact section */
+.contact-info {
+    font-size: 18px;
+    line-height: 1.5;
+}
+.contact-info i{
+    width: 30px;
+    display: inline-block;
+}
+.contact-info a {
+    color: #0000f1;
+    opacity: 0.7;
+}
+.contact-info a:hover {
+    opacity: 1;
+}
+.form-control {
+    padding: 10px;
+    width: 100%;
+}
+.data-input{
+    margin-bottom: 8px;
+}
+.submit-button {
+    float: right;
+    margin-top: 16px ;
+}
+
+/* Map section */
+.map-section img {
+    width: 100%;
+}
+/* FOOTER */
+#footer .social-section {
+    font-size: 22.5px;
+}
+#footer .copyright a:hover,
+#footer .social-section a:hover{
+    color: rgba(70, 70, 70, 0.7);
+}
+/* MODAL */
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.open{
+    display: flex;
+}
+.modal-container {
+    background-color: #fff;
+    min-height: 200px;
+    width: 900px;
+    max-width: calc(100% - 32px);
+    position: relative;
+    /* gọi chuyển động chạy từ trên xuống khi xuất hiện và quy định thời gian chạy */
+    animation: modalFadeIn ease 0.5s;
+}
+.modal-close {
+    color: #fff;
+    position: absolute;
+    right: 0;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.modal-close:hover{
+    color: #000;
+    background-color: #ccc;
+}
+header.modal-header {
+    background-color: #009688;
+    height: 130px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    letter-spacing: 4px;
+    font-weight: 400;
+}
+.modal-header-bag{
+    margin: 10px 0;
+}
+.modal-body {
+    padding: 16px;
+}
+.modal-laybel {
+    display: block;
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 15px 0;
+}
+.modal-input {
+    display: block;
+    padding: 8px;
+    width: 100%;
+    border: 1px solid #ccc;
+}
+#buy-check {
+    background-color: #009688;
+    border: none;
+    padding: 16px 0;
+    margin: 16px 0;
+    width: 100%;
+    font-weight: 500;
+    font-size: 15px;
+    color: #fff;
+}
+#buy-check:hover{
+    color: #000;
+    background-color: #ccc;
+}
+.modal-footer {
+    padding-right: 16px;
+    padding-bottom: 20px;
+    float: right;
+    overflow: hidden;
+    font-size: 15px;
+}
+.modal-footer p span a{
+color: #2196F3;
+}
+/* tạo chuyển động chạy từ trên xuống khi xuất hiện */
+@keyframes modalFadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(-150px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
